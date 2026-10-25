@@ -1,0 +1,157 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Suvir's Fractions Lab</title><meta name="description" content="Learn fractions: watch a short lesson, then work 10 starter problems. Type an answer and check it."><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"><style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;padding:0 0 40px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:linear-gradient(160deg,#0f2027 0%,#203a43 45%,#2c5364 100%);min-height:100vh;color:#fff}
+header{padding:22px 16px 6px;text-align:center}header h1{margin:0;font-size:1.7rem}header p{margin:6px 0 0;color:#bfe3ff;font-size:.92rem}
+main{max-width:760px;margin:0 auto;padding:10px 14px}
+.pw{max-width:760px;margin:12px auto 4px;padding:0 14px}.pb{background:rgba(255,255,255,.15);border-radius:999px;height:14px;overflow:hidden}.pf{height:100%;width:0;background:linear-gradient(90deg,#42d77d,#a6ff7e);transition:width .5s}.pl{font-size:.82rem;color:#cfeeff;text-align:center;margin-top:5px}
+.card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:18px;padding:16px;margin-bottom:14px}
+.card h2{margin:0 0 8px;font-size:1.2rem}.card h3{margin:0 0 8px;font-size:1.05rem}.card p{color:#e8f4ff;line-height:1.5;margin:6px 0}
+a.btn{display:block;text-align:center;text-decoration:none;font-weight:800;background:linear-gradient(135deg,#3aa0ff,#2f6bff);color:#fff;border-radius:14px;padding:13px;margin:10px 0 0}a.btn.alt{background:linear-gradient(135deg,#8a5cf6,#c05cff)}
+.vid{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;background:#000;margin-top:8px}.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.problem{padding:14px;margin:12px 0;border-left:5px solid #ffd54a;background:rgba(255,255,255,.06);border-radius:12px}
+.problem.ok{border-left-color:#42d77d}.problem.no{border-left-color:#ff8a8a}
+.num{font-weight:900;color:#ffd54a;margin-bottom:4px}.stmt{font-size:1.05rem;line-height:1.6}.stmt .katex{font-size:1.12em}
+.how{font-size:.82rem;color:#9fd0ea;margin-top:6px}
+.viz{margin:10px 0 2px}.viz svg{display:block;margin:4px 0}
+.cmp{display:flex;gap:22px;flex-wrap:wrap}.cmp figure{margin:0;text-align:center;color:#cfeeff;font-size:1rem}
+.problem input{width:100%;min-height:48px;padding:12px;font:inherit;font-size:1.05rem;border:2px solid #b6d1df;border-radius:10px;background:#fff;color:#142536;margin:10px 0 6px}
+.problem input:disabled{background:#e4efe6}
+button.chk,button.retry,button.hint{padding:11px 16px;border:0;border-radius:10px;font:inherit;font-weight:800;min-height:44px;cursor:pointer;margin-right:8px}
+button.chk{background:#ffd54a;color:#142536}button.retry{background:#fff;color:#142536;display:none}button.hint{background:rgba(255,255,255,.14);color:#fff}
+.res{margin-top:10px;font-weight:700;line-height:1.5}.problem.ok .res{color:#a6ff7e}.problem.no .res{color:#ffb8b8}.res .why{display:block;font-weight:500;color:#e8f4ff;margin-top:4px}
+.hinttxt{display:none;margin-top:8px;color:#ffe9a8;font-size:.95rem}
+.sec{margin:22px 2px 4px;font-size:1.2rem}.secsub{margin:0 2px 8px;color:#9fd0ea;font-size:.88rem}
+footer{text-align:center;color:#6d97ad;font-size:.75rem;padding:18px 14px}
+.done{display:none;text-align:center;font-size:1.2rem;font-weight:900;color:#a6ff7e}
+</style></head><body>
+<header><h1>Suvir's Fractions Lab</h1><p>Watch the lesson, then work all 10 problems. Type your answer, press Enter or tap Check.</p></header>
+<div class="pw"><div class="pb"><div class="pf" id="pf"></div></div><div class="pl" id="pl">0 of 10 correct</div></div>
+<main>
+<div class="card"><h2>1. Watch first</h2>
+<p><b>What Are Fractions?</b> (12:04, Math Antics) - the best place to start. You will meet the numerator (top number) and the denominator (bottom number), and see fractions as parts of a whole and parts of a group.</p>
+<div class="vid"><iframe src="https://www.youtube-nocookie.com/embed/I1u3pM9g9o8" title="Math Antics - What Are Fractions?" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+<a class="btn" href="https://www.youtube.com/watch?v=I1u3pM9g9o8" target="_blank" rel="noopener">Open on YouTube: What Are Fractions? (12:04, Math Antics)</a>
+<p style="margin-top:14px"><b>Keep watching when you're ready:</b></p>
+<a class="btn" href="https://www.youtube.com/watch?v=17IgK9b6P2M" target="_blank" rel="noopener">Types of Fractions (6:42, Math Antics) - proper fractions, why 6/6 = 1, fractions on the number line</a>
+<a class="btn" href="https://www.youtube.com/watch?v=KNdUJQ_qd4U" target="_blank" rel="noopener">Comparing Fractions (6:31, Math Antics) - which fraction is bigger, and a cross-multiplying trick</a>
+<a class="btn alt" href="https://www.youtube.com/watch?v=-YpEkExjq2E" target="_blank" rel="noopener">Bonus, optional: Generating Equivalent Fractions (4:12, Khan Academy, 3rd grade) - this unlocks Problem 8</a>
+</div>
+<div class="card"><h2>2. How to enter answers</h2>
+<p>Type a fraction with a slash, like <code>3/4</code> (that means three-fourths). Type a whole number as itself, like <code>2</code>.</p>
+<p>Equivalent fractions count: if the answer is <code>1/2</code>, typing <code>2/4</code> or <code>3/6</code> is also correct. Progress saves on this device.</p></div>
+<div id="list"></div>
+<div class="card done" id="done">All 10 done. Nice work.</div>
+</main>
+<footer>Original practice problems. Progress is saved on this device only.</footer>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+// ---------- Fraction visuals ----------
+var GOLD="#ffd54a",PURPLE="#b48bff",EMPTY="rgba(255,255,255,.12)",INK="#12303d";
+function pieSVG(n,k){var r=58,cx=70,cy=70,s='<svg width="140" height="140" viewBox="0 0 140 140">';
+for(var i=0;i<n;i++){var a0=-Math.PI/2+i*2*Math.PI/n,a1=-Math.PI/2+(i+1)*2*Math.PI/n;
+var x0=(cx+r*Math.cos(a0)).toFixed(2),y0=(cy+r*Math.sin(a0)).toFixed(2),x1=(cx+r*Math.cos(a1)).toFixed(2),y1=(cy+r*Math.sin(a1)).toFixed(2);
+var large=(2*Math.PI/n)>Math.PI?1:0;
+s+='<path d="M70,70 L'+x0+','+y0+' A58,58 0 '+large+' 1 '+x1+','+y1+' Z" fill="'+(i<k?GOLD:EMPTY)+'" stroke="'+INK+'" stroke-width="2"/>';}
+return s+'</svg>';}
+function barSVG(n,groups){var w=280,h=56,seg=w/n,s='<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'">';
+var map=[];groups.forEach(function(g){for(var j=0;j<g.c;j++)map.push(g.k);});
+for(var i=0;i<n;i++){var fill=map[i]||EMPTY;
+s+='<rect x="'+(i*seg+1)+'" y="1" width="'+(seg-2)+'" height="'+(h-2)+'" rx="5" fill="'+fill+'" stroke="'+INK+'"/>';}
+return s+'</svg>';}
+function dotsSVG(groups,perRow){perRow=perRow||8;var r=13,gap=36,x0=24,y0=26;
+var items=[];groups.forEach(function(g){for(var j=0;j<g.c;j++)items.push(g.k);});
+var rows=Math.ceil(items.length/perRow);
+var s='<svg width="'+(2*x0+(perRow-1)*gap)+'" height="'+(2*y0+(rows-1)*gap)+'">';
+items.forEach(function(c,i){var row=Math.floor(i/perRow),col=i%perRow;s+='<circle cx="'+(x0+col*gap)+'" cy="'+(y0+row*gap)+'" r="'+r+'" fill="'+c+'" stroke="'+INK+'" stroke-width="2"/>';});
+return s+'</svg>';}
+var cmpSVG='<div class="cmp"><figure>'+barSVG(3,[{c:1,k:GOLD}])+'<figcaption>\\(\\frac{1}{3}\\)</figcaption></figure><figure>'+barSVG(4,[{c:1,k:GOLD}])+'<figcaption>\\(\\frac{1}{4}\\)</figcaption></figure></div>';
+// ---------- Fraction answer engine ----------
+function gcdI(a,b){a=Math.abs(a);b=Math.abs(b);while(b){var t=a%b;a=b;b=t;}return a||1;}
+function norm(n,d){if(d<0){n=-n;d=-d;}var g=gcdI(n,d);return {n:n/g,d:d/g};}
+function approxFrac(v){for(var d=1;d<=100;d++){var n=Math.round(v*d);if(Math.abs(v-n/d)<1e-9)return norm(n,d);}return null;}
+// accepts: 3/4, 3 / 4, 2, 1 1/2 (mixed), 0.5 (decimal), minus variants
+function parseFrac(s){
+  s=String(s).trim().toLowerCase().replace(/[\u2212\u2013\u2014]/g,"-").replace(/\s+/g," ");
+  if(!s)return null;
+  s=s.replace(/^(answer|ans|it is|its|it's)[:\s]*/,"");
+  var m;
+  if(m=/^(-?\d+)\s+(\d+)\s*\/\s*(\d+)$/.exec(s)){var w=+m[1],nn=+m[2],dd=+m[3];if(dd===0)return null;var sign=w<0?-1:1;return norm(sign*(Math.abs(w)*dd+nn),dd);}
+  if(m=/^(-?\d+)\s*\/\s*(\d+)$/.exec(s)){if(+m[2]===0)return null;return norm(+m[1],+m[2]);}
+  if(m=/^(-?\d+)$/.exec(s))return {n:+m[1],d:1};
+  if(m=/^(-?(?:\d+\.\d+|\.\d+))$/.exec(s))return approxFrac(parseFloat(m[1]));
+  return null;
+}
+var P=[
+{sec:"A. Name the fraction",sub:"Bottom number: how many equal parts in the whole. Top number: how many parts are shaded.",
+ t:"f",q:"What fraction of the circle is shaded?",viz:pieSVG(4,1),a:[1,4],tex:String.raw`\frac{1}{4}`,h:"Count all the equal parts first. That count is the bottom number.",w:"The circle has 4 equal parts and 1 is shaded: \\(\\frac{1}{4}\\)."},
+{t:"f",q:"What fraction of the bar is shaded?",viz:barSVG(3,[{c:2,k:GOLD}]),a:[2,3],tex:String.raw`\frac{2}{3}`,h:"There are 3 equal parts. How many are gold?",w:"2 of the 3 equal parts are shaded: \\(\\frac{2}{3}\\)."},
+{t:"f",q:"What fraction of the circle is shaded?",viz:pieSVG(8,5),a:[5,8],tex:String.raw`\frac{5}{8}`,h:"Count every slice for the bottom number, then count the gold slices.",w:"8 equal slices, 5 shaded: \\(\\frac{5}{8}\\)."},
+{t:"f",q:"What fraction of the bar is shaded? (Careful, this one is special.)",viz:barSVG(6,[{c:6,k:GOLD}]),a:[1,1],tex:"1",h:"What do you call it when ALL the parts are shaded?",w:"All 6 of 6 parts are shaded, so the whole bar is shaded: \\(\\frac{6}{6}=1\\). A fraction with the same top and bottom always equals 1."},
+{sec:"B. Fraction of a group",sub:"The whole can also be a group of things. Bottom: how many in the group. Top: how many you are counting.",
+ t:"f",q:"3 of the 7 apples are red. What fraction of the apples are red?",viz:dotsSVG([{c:3,k:"#ff8787"},{c:4,k:"#69db7c"}]),a:[3,7],tex:String.raw`\frac{3}{7}`,h:"The whole group is 7 apples. Count the red ones for the top number.",w:"3 red apples out of 7 apples: \\(\\frac{3}{7}\\)."},
+{t:"f",q:"4 of the 10 balloons are blue. What fraction of the balloons are blue?",viz:dotsSVG([{c:4,k:"#74c0fc"},{c:6,k:"#ffe066"}],5),a:[2,5],tex:String.raw`\frac{4}{10}=\frac{2}{5}`,h:"4 out of 10. Bonus move: you can make this fraction simpler.",w:"\\(\\frac{4}{10}\\) is correct, and it simplifies: divide top and bottom by 2 to get \\(\\frac{2}{5}\\). Both answers count."},
+{sec:"C. Compare fractions",sub:"Same top number? Fewer parts means BIGGER pieces.",
+ t:"f",q:String.raw`Which fraction is bigger, \(\frac{1}{3}\) or \(\frac{1}{4}\)? Type the bigger fraction.`,viz:cmpSVG,a:[1,3],tex:String.raw`\frac{1}{3}`,h:"Each bar is one whole. Which shaded piece looks bigger?",w:"Thirds are bigger pieces than fourths, because the whole is split into fewer parts. So \\(\\frac{1}{3}>\\frac{1}{4}\\)."},
+{sec:"D. Stretch a little",sub:"You know more than you think. Use the pictures.",
+ t:"f",q:String.raw`\(\frac{1}{2}=\frac{?}{6}\). What number goes in the box?`,viz:barSVG(6,[{c:3,k:GOLD}]),a:[3,1],tex:"3",h:"The bar is split into 6 parts and half of it is shaded. Half of 6 parts is how many parts?",w:"Half of 6 parts is 3 parts, so \\(\\frac{1}{2}=\\frac{3}{6}\\). The missing number is 3."},
+{t:"f",q:String.raw`Add: \(\frac{2}{8}+\frac{3}{8}\). The gold parts plus the purple parts make what fraction of the bar?`,viz:barSVG(8,[{c:2,k:GOLD},{c:3,k:PURPLE}]),a:[5,8],tex:String.raw`\frac{5}{8}`,h:"The parts are the same size, so you can just add the top numbers.",w:"2 parts + 3 parts = 5 parts out of 8: \\(\\frac{2}{8}+\\frac{3}{8}=\\frac{5}{8}\\)."},
+{t:"f",q:"A pizza is cut into 8 equal slices. Suvir eats 3 slices and Dad eats 2 slices. What fraction of the pizza is left? (The picture shows the slices that are left.)",viz:pieSVG(8,3),a:[3,8],tex:String.raw`\frac{3}{8}`,h:"First find how many slices are left. That is the top number.",w:"8 - 3 - 2 = 3 slices left out of 8: \\(\\frac{3}{8}\\) of the pizza is left."}
+];
+var KEY="fractions-lab-v1";
+var S={};try{S=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){S={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function grade(p,v){
+  var f=parseFrac(v);
+  if(!f)return "bad";
+  var e=norm(p.a[0],p.a[1]);
+  if(f.n===e.n&&f.d===e.d)return "ok";
+  if(e.n<e.d&&f.n===e.d&&f.d===e.n)return "flip";
+  return "wrong";
+}
+function render(){
+  var L=document.getElementById("list"),h="";
+  P.forEach(function(p,i){
+    if(p.sec)h+='<h3 class="sec">'+p.sec+'</h3><p class="secsub">'+p.sub+'</p>';
+    h+='<div class="problem" id="p'+i+'"><div class="num">Problem '+(i+1)+'</div><div class="stmt">'+p.q+'</div><div class="viz">'+p.viz+'</div><div class="how">'+(i===7?"Type the missing number.":"Type a fraction like 3/4.")+'</div>'+
+    '<input id="in'+i+'" type="text" inputmode="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Your answer">'+
+    '<button class="chk" data-i="'+i+'">Check</button><button class="retry" data-i="'+i+'">Try again</button><button class="hint" data-i="'+i+'">Hint</button>'+
+    '<div class="hinttxt" id="h'+i+'">Hint: '+p.h+'</div><div class="res" id="r'+i+'"></div></div>';
+  });
+  L.innerHTML=h;
+  P.forEach(function(p,i){var s=S[i];if(s){document.getElementById("in"+i).value=s.v;show(i,s.r,s.v,true);}});
+  progress();
+  document.querySelectorAll(".chk").forEach(function(b){b.onclick=function(){check(+b.dataset.i)}});
+  document.querySelectorAll(".retry").forEach(function(b){b.onclick=function(){retry(+b.dataset.i)}});
+  document.querySelectorAll(".hint").forEach(function(b){b.onclick=function(){var e=document.getElementById("h"+b.dataset.i);e.style.display=e.style.display==="block"?"none":"block"}});
+  P.forEach(function(p,i){document.getElementById("in"+i).addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();check(i)}})});
+  typeset();
+}
+function typeset(){if(window.renderMathInElement){renderMathInElement(document.body,{delimiters:[{left:"\\(",right:"\\)",display:false},{left:"\\[",right:"\\]",display:true}],throwOnError:false});}}
+function show(i,r,v,quiet){
+  var p=P[i],box=document.getElementById("p"+i),res=document.getElementById("r"+i),inp=document.getElementById("in"+i),rb=box.querySelector(".retry");
+  box.className="problem "+(r==="ok"?"ok":(r==="empty"?"":"no"));
+  var msg="";
+  if(r==="ok"){msg='\u2713 Correct. <span class="why">'+p.w+'</span>';inp.disabled=true;rb.style.display="none";}
+  else if(r==="bad"){msg="\u2717 I could not read that. Type a fraction like 3/4, or a whole number like 2.";inp.disabled=false;rb.style.display="none";}
+  else if(r==="flip"){msg="\u2717 You flipped it. The shaded or counted parts go on top, and all the equal parts go on the bottom.";inp.disabled=false;rb.style.display="inline-block";}
+  else{msg='\u2717 Not quite. Correct answer: \\('+p.tex+'\\)<span class="why">'+p.w+'</span>';inp.disabled=false;rb.style.display="inline-block";}
+  res.innerHTML=msg;
+  if(!quiet){typeset();}
+}
+function check(i){
+  var inp=document.getElementById("in"+i),v=inp.value.trim();
+  if(!v){document.getElementById("r"+i).innerHTML="Type an answer first.";return;}
+  var r;try{r=grade(P[i],v);}catch(e){r="bad";}
+  S[i]={v:v,r:r};save();show(i,r,v);progress();
+}
+function retry(i){var inp=document.getElementById("in"+i);inp.disabled=false;inp.focus();inp.select();delete S[i];save();document.getElementById("p"+i).className="problem";document.getElementById("r"+i).innerHTML="";document.querySelector("#p"+i+" .retry").style.display="none";progress();}
+function progress(){
+  var n=0;P.forEach(function(p,i){if(S[i]&&S[i].r==="ok")n++});
+  document.getElementById("pf").style.width=(n/P.length*100)+"%";
+  document.getElementById("pl").textContent=n+" of "+P.length+" correct";
+  document.getElementById("done").style.display=n===P.length?"block":"none";
+}
+render();
+window.addEventListener("load",function(){setTimeout(typeset,300);});
+</script></body></html>
